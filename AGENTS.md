@@ -13,6 +13,14 @@ This file governs human and AI contributions to this repository. Read `specs.md`
 - **Option B, deferred future goal:** optional guided migration with backup/export, capability preview, explicit approval, field mapping, verification, and rollback where feasible. Design identities and storage schemas to permit it; **do not implement migration as an unapproved side effect**.
 - Main UI: named-list navigation, responsive desktop/mobile application shell, quick entry, detail editor, and dynamic provider-independent autocomplete. Assist/automation support uses native HA actions where feasible.
 
+## Mandatory specification synchronization
+
+- Every architecture, functionality, data contract, persistence, integration behavior, UX, or compatibility change **must review `specs.md`**.
+- Update `specs.md` in the **same pull request or commit** whenever requirements, design decisions, acceptance criteria, or documented behavior change.
+- If no specification update is needed, state **"Spec reviewed; no update required"** with a brief rationale in the change summary.
+- Stop and request approval before changing an approved requirement to accommodate implementation.
+- Every pull request and milestone handoff must include a specification-impact check.
+
 ## Before any code change
 
 1. Read the relevant portions of `specs.md`, `AGENTS.md`, and existing source/tests. Confirm the intended milestone and acceptance criteria.
