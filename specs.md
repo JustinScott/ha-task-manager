@@ -206,3 +206,13 @@ other todo entities
 - Integration domain: `ha_task_manager` (working name).
 - Foundation uses a UI configuration flow with no external credentials or network requirements.
 - Milestone 1 is incremental: establish an importable integration, lifecycle-safe setup/unload, test and CI infrastructure first; implement a production-ready sidebar panel and Local To-do selection only after verifying the supported Home Assistant frontend and to-do APIs.
+
+
+### Milestone 1 progress: sidebar and entity discovery (2026-11-03)
+
+- The initial sidebar panel is registered through Home Assistant's `panel_custom` integration and a bundled, locally served JavaScript module.
+- The panel currently discovers visible `todo.*` entities from the authenticated frontend state, displays full friendly names, and allows **temporary, read-only selection**. Selection is not yet persisted and does not change the underlying provider.
+- Task retrieval, mutation, metadata persistence, responsive drawer/editor, and provider migration remain unimplemented.
+- This JavaScript panel is an intentionally small foundation. A maintainable TypeScript/Lit frontend and a proper build pipeline are still required before release.
+- The first production-ready provider-selection implementation must persist an explicit mapping in the integration and handle unavailable, renamed, and deleted entities.
+- Do not interpret the current panel as an end-to-end integration test; verify registration and teardown against a dedicated Home Assistant development instance.
