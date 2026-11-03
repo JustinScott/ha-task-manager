@@ -1,15 +1,22 @@
 # HA Task Manager
 
-Local-first Home Assistant task manager (early development). The project aims to
-provide a dedicated sidebar application backed by native `todo` entities, with
-additional metadata stored locally in Home Assistant.
+Local-first Home Assistant list manager, under active development.
 
-**Status:** Milestone 1 foundation in progress. The current scaffold provides a
-config flow only; the sidebar panel, task storage, list discovery, and task editing
-are **not yet implemented**. Do not install expecting a working task manager.
+**Status: Milestone 1 in progress.** The integration currently registers a
+dedicated **Lists** sidebar panel. The panel discovers native `todo.*` entities
+available in the signed-in Home Assistant frontend and lets you choose which
+entity to inspect. This is **read-only discovery**, not yet a task editor,
+persistent provider configuration, or provider migration.
 
-See [`specs.md`](specs.md) for product requirements and [`AGENTS.md`](AGENTS.md)
-for contributor/AI development instructions.
+## Development installation (not production-ready)
+
+Copy `custom_components/ha_task_manager` to your **development** Home Assistant
+configuration's `custom_components` directory. Restart that Home Assistant
+instance and add **HA Task Manager** under Settings → Devices & services.
+The sidebar should then show **Lists**.
+
+Do not install this early scaffold on a production instance. This project has
+not yet passed a full Home Assistant integration test.
 
 ## Development checks
 
@@ -20,5 +27,6 @@ ruff format --check .
 pytest -q
 ```
 
-No real task data, credentials, local IP addresses, or personal configuration
-should be committed to this public repository.
+See [`specs.md`](specs.md) for requirements and [`AGENTS.md`](AGENTS.md)
+for coding instructions. Never commit credentials, personal tasks, local
+addresses, or real Home Assistant configuration.
