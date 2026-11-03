@@ -1,0 +1,13 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up HA Task Manager",
+        "description": "Create a local task manager configuration. List selection will be available in a future foundation update."
+      }
+    },
+    "abort": {
+      "already_configured": "HA Task Manager is already configured"
+    }
+  }
+}
