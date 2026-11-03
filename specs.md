@@ -196,3 +196,13 @@ other todo entities
 - Home Assistant developer documentation: https://developers.home-assistant.io/
 
 **Specification rule:** If implementation reveals a conflict between this specification and supported Home Assistant APIs, document the conflict and propose a spec amendment before silently changing behavior.
+
+## 14. Specification maintenance policy
+
+`AGENTS.md` requires every architecture, functionality, persistence, API, UX, or compatibility change to review this specification. If requirements or behavior change, update `specs.md` in the same change set. If no update is necessary, the change summary must explicitly state why. Proposed deviations from approved requirements require approval before implementation.
+
+### Milestone 1 implementation decisions
+
+- Integration domain: `ha_task_manager` (working name).
+- Foundation uses a UI configuration flow with no external credentials or network requirements.
+- Milestone 1 is incremental: establish an importable integration, lifecycle-safe setup/unload, test and CI infrastructure first; implement a production-ready sidebar panel and Local To-do selection only after verifying the supported Home Assistant frontend and to-do APIs.
