@@ -3,11 +3,22 @@
     "step": {
       "user": {
         "title": "Set up HA Task Manager",
-        "description": "Create a local task manager configuration. List selection will be available in a future foundation update."
+        "description": "Create a local task manager configuration."
       }
     },
     "abort": {
       "already_configured": "HA Task Manager is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Choose lists",
+        "description": "Select the Home Assistant to-do lists to show in the Lists sidebar.",
+        "data": {
+          "lists": "To-do lists"
+        }
+      }
     }
   }
 }
