@@ -225,3 +225,11 @@ other todo entities
 - Added frontend read-only task retrieval using the native `todo/item/list` WebSocket command, with loading/empty/error states and stale-response protection when switching lists.
 - The selection is a list visibility preference, not provider migration or a portable logical-list identity mapping. Entity rename/removal recovery remains pending.
 - Task creation, mutation, metadata persistence, and visual/runtime integration validation remain pending. The current implementation is unverified against a running Home Assistant instance.
+
+
+### CI and automated test harness (2026-11-06)
+
+- GitHub Actions validates Python lint/format/syntax, frontend JavaScript syntax via Node, dependency-free contracts, and a separate Home Assistant pytest job using `pytest-homeassistant-custom-component`.
+- The initial HA harness covers local configuration entry creation and persistence of selected `todo` entity IDs in options.
+- These checks do not deploy to production, test actual provider task retrieval end-to-end, or replace browser visual testing.
+- The workflow and HA tests must be verified against real GitHub Actions job results before treating them as passing quality gates.
