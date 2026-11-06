@@ -216,3 +216,12 @@ other todo entities
 - This JavaScript panel is an intentionally small foundation. A maintainable TypeScript/Lit frontend and a proper build pipeline are still required before release.
 - The first production-ready provider-selection implementation must persist an explicit mapping in the integration and handle unavailable, renamed, and deleted entities.
 - Do not interpret the current panel as an end-to-end integration test; verify registration and teardown against a dedicated Home Assistant development instance.
+
+
+### Milestone 1 progress: configured lists and native item reads (2026-11-06)
+
+- Added a Home Assistant Options flow using a multiple-entity selector restricted to `todo` entities. Selected entity IDs persist in config-entry options; no credentials or personal task content are stored in the repository.
+- Added an authenticated integration WebSocket command, `ha_task_manager/lists`, that exposes the selected IDs to the bundled frontend.
+- Added frontend read-only task retrieval using the native `todo/item/list` WebSocket command, with loading/empty/error states and stale-response protection when switching lists.
+- The selection is a list visibility preference, not provider migration or a portable logical-list identity mapping. Entity rename/removal recovery remains pending.
+- Task creation, mutation, metadata persistence, and visual/runtime integration validation remain pending. The current implementation is unverified against a running Home Assistant instance.
